@@ -11,6 +11,7 @@ namespace P2FixAnAppDotNetCode.Models
         /// <summary>
         /// Read-only property for display only
         /// </summary>
+        private List<CartLine> _cartLines = new();
         public IEnumerable<CartLine> Lines => GetCartLineList();
 
         /// <summary>
@@ -19,7 +20,7 @@ namespace P2FixAnAppDotNetCode.Models
         /// <returns></returns>
         private List<CartLine> GetCartLineList()
         {
-            return new List<CartLine>();
+            return _cartLines;
         }
 
         /// <summary>
@@ -27,7 +28,20 @@ namespace P2FixAnAppDotNetCode.Models
         /// </summary>//
         public void AddItem(Product product, int quantity)
         {
-            // TODO implement the method
+            var cartLine = _cartLines.FirstOrDefault(item  => item.Product.Id == product.Id);
+
+            if (cartLine != null)
+            {
+                cartLine.Quantity += quantity;
+                return;
+            }
+
+            CartLine newCartLine = new()
+            {
+                Product = product,
+                Quantity = quantity
+            };
+            _cartLines.Add(newCartLine);
         }
 
         /// <summary>
