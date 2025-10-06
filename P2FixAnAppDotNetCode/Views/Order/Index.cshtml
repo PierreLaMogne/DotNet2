@@ -1,5 +1,9 @@
 ﻿@model P2FixAnAppDotNetCode.Models.Order
 
+@{
+    ViewData["Title"] = Localizer["YourOrder"];
+}
+
 <h2>@Localizer["OrderTitle"]</h2>
 
 <div asp-validation-summary="All" class="text-danger"></div>
