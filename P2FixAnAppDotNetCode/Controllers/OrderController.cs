@@ -40,10 +40,13 @@ namespace P2FixAnAppDotNetCode.Controllers
             }
         }
 
-        public ViewResult Completed()
+        public IActionResult Completed()
         {
             _cart.Clear();
-            return View();
+
+            TempData["OrderCompleted"] = true;
+
+            return RedirectToAction("Index", "Product");
         }
     }
 }

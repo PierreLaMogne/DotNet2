@@ -4,7 +4,11 @@
     ViewData["Title"] = Localizer["ProductList"];
 }
 
-<br/>
+@if (TempData["OrderCompleted"] != null)
+{
+    <h2>@Localizer["Thanks"]</h2>
+    <p>@Localizer["OrderCompleted"]</p>
+}
 <div id="panel-body">
     <table class="table table-bordered table-striped table-sm">
         <thead>

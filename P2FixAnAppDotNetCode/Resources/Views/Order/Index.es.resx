@@ -147,6 +147,9 @@
   <data name="ShipTo" xml:space="preserve">
     <value>Enviar a</value>
   </data>
+  <data name="YourOrder" xml:space="preserve">
+    <value>Su pedido</value>
+  </data>
   <data name="Zip" xml:space="preserve">
     <value>Código postal</value>
   </data>

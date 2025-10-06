@@ -126,6 +126,9 @@
   <data name="Name" xml:space="preserve">
     <value>Nombre</value>
   </data>
+  <data name="OrderCompleted" xml:space="preserve">
+    <value>Nos ocuparemos de su pedido.</value>
+  </data>
   <data name="Price" xml:space="preserve">
     <value>Precios</value>
   </data>
@@ -134,5 +137,8 @@
   </data>
   <data name="Stock" xml:space="preserve">
     <value>Stock</value>
+  </data>
+  <data name="Thanks" xml:space="preserve">
+    <value>Gracias !</value>
   </data>
 </root>
