@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 
 namespace P2FixAnAppDotNetCode.Models
 {
@@ -55,8 +56,7 @@ namespace P2FixAnAppDotNetCode.Models
         /// </summary>
         public double GetTotalValue()
         {
-            // TODO implement the method
-            return 0.0;
+            return GetCartLineList().Sum(item => item.Quantity * item.Product.Price);
         }
 
         /// <summary>
@@ -64,8 +64,11 @@ namespace P2FixAnAppDotNetCode.Models
         /// </summary>
         public double GetAverageValue()
         {
-            // TODO implement the method
-            return 0.0;
+            double totalValue = GetTotalValue();
+
+            double totalQuantity = GetCartLineList().Sum(item => item.Quantity);
+
+            return totalValue / totalQuantity;
         }
 
         /// <summary>
