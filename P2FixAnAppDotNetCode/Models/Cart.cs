@@ -19,7 +19,7 @@ namespace P2FixAnAppDotNetCode.Models
         /// Return the actual cartline list
         /// </summary>
         /// <returns></returns>
-        private List<CartLine> GetCartLineList()
+        public List<CartLine> GetCartLineList()
         {
             return _cartLines;
         }
@@ -29,10 +29,14 @@ namespace P2FixAnAppDotNetCode.Models
         /// </summary>//
         public void AddItem(Product product, int quantity)
         {
-            var cartLine = _cartLines.FirstOrDefault(item  => item.Product.Id == product.Id);
+            var cartLine = GetCartLineList().FirstOrDefault(item  => item.Product.Id == product.Id);
 
             if (cartLine != null)
             {
+                if ((cartLine.Quantity + quantity) > product.Stock)
+                {
+                    return;
+                }
                 cartLine.Quantity += quantity;
                 return;
             }
