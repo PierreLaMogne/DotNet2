@@ -31,8 +31,7 @@ namespace P2FixAnAppDotNetCode.Models.Services
         /// </summary>
         public Product GetProductById(int id)
         {
-            // TODO implement the method
-            return null;
+            return GetAllProducts().Find(item => item.Id == id);
         }
 
         /// <summary>
