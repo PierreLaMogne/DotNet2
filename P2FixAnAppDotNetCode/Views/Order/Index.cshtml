@@ -7,20 +7,24 @@
     <h3>@Localizer["ShipTo"]</h3>
     <div class="form-group">
         <label>@Localizer["Name"]*:</label><input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
     </div>
     <h3>@Localizer["Adress"]</h3>
     <div class="form-group">
         <label>@Localizer["Location"]*:</label><input asp-for="Address" class="form-control" />
+        <span asp-validation-for="Address" class="text-danger"></span>
     </div>
     <div class="row">
         <div class="form-group col-4">
             <label>@Localizer["City"]*:</label><input asp-for="City" class="form-control" />
+            <span asp-validation-for="City" class="text-danger"></span>
         </div>
         <div class="form-group col-4">
             <label>@Localizer["Zip"]:</label><input asp-for="Zip" class="form-control" />
         </div>
         <div class="form-group col-4">
             <label>@Localizer["Country"]*:</label><input asp-for="Country" class="form-control" />
+            <span asp-validation-for="Country" class="text-danger"></span>
         </div>
     </div>
     <div class="text-center">
